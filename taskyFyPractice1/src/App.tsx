@@ -1,11 +1,13 @@
+import { useState } from "react";
 import InputField from "./components/InputField.js";
 
 const App = () => {
+  const [task, setTask] = useState<string>("");
   return (
     <div>
       <div className="heading">taskyFy</div>
 
-      <InputField />
+      <InputField task={task} setTask={setTask} />
     </div>
   );
 };
