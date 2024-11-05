@@ -1,13 +1,9 @@
 interface Props {
   task: string;
   setTask: (task: string) => void;
+  handleSubmit: (e: React.FormEvent) => void;
 }
-const InputField = ({ task, setTask }: Props) => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(task);
-    setTask("");
-  };
+const InputField = ({ task, setTask, handleSubmit }: Props) => {
   return (
     <form className="input" onSubmit={handleSubmit}>
       <input
