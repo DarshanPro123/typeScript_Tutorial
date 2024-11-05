@@ -2,7 +2,7 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #52da20;
+  background-color: #a5da20;
   color: white;
   text-align: center;
 }
@@ -41,7 +41,7 @@ body {
 .submitBtn {
   position: absolute;
   right: 0;
-  background-color: #22a60a;
+  background-color: #5c7d06;
   color: white;
   border: none;
   padding: 16px;
@@ -53,11 +53,28 @@ body {
 }
 
 .submitBtn:hover {
-  background-color: #52da20;
+  background-color: #1a4f06;
   cursor: pointer;
 }
 
 .submitBtn:active {
   transform: scale(0.8);
   box-shadow: 0 0 6px #0000008b;
+}
+
+.todos {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 90%;
+}
+
+.todo_single {
+  display: flex;
+  border-radius: 5px;
+  width: 30%;
+  padding: 20px;
+  margin-top: 15px;
+  background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+  transition: 0.2s;
 }
