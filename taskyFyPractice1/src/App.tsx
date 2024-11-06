@@ -6,8 +6,19 @@ import TodoList from "./components/TodoList";
 const App = () => {
   const [task, setTask] = useState<string>("");
   const [todos, setTodos] = useState<Todo[]>([]);
+  const [updateId, setUpdateId] = useState<number | null>(null);
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (updateId) {
+      setTodos(
+        todos.map((todo) => (todo.id === updateId ? { ...todo, task } : todo))
+      );
+      setUpdateId(null);
+      setTask("");
+      return;
+    }
+
     if (task)
       setTodos([...todos, { id: Date.now(), task, isCompleted: false }]);
     console.log(todos);
@@ -19,7 +30,12 @@ const App = () => {
 
       <InputField handleSubmit={handleSubmit} task={task} setTask={setTask} />
 
-      <TodoList todos={todos} setTodos={setTodos} />
+      <TodoList
+        setTask={setTask}
+        setUpdateId={setUpdateId}
+        todos={todos}
+        setTodos={setTodos}
+      />
     </div>
   );
 };

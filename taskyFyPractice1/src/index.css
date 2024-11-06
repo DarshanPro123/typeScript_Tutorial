@@ -78,7 +78,7 @@ body {
   max-width: 500px;
   padding: 15px 20px;
   margin: 15px 0;
-  background-image: url("https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg");
+  background-image: url("https://img.freepik.com/free-photo/white-paper-texture_1194-2301.jpg?t=st=1730868673~exp=1730872273~hmac=de130f58e9c42f026e9e9dac01c14ec496fd0f13976d592116ed6472401eb418&w=2000");
   background-size: cover;
   background-position: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -101,10 +101,21 @@ body {
   display: flex;
   cursor: pointer;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   color: #555;
   margin-left: 10px;
   transition: color 0.2s;
+}
+
+.done {
+  text-decoration: line-through;
+  color: red;
+  font-size: 1.4rem;
+}
+
+.done:hover {
+  text-decoration: none;
+  color: rgb(199, 9, 9);
 }
 
 .icon:hover {
