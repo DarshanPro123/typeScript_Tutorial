@@ -2,6 +2,7 @@ import { MdOutlineEdit } from "react-icons/md";
 import { FaDeleteLeft } from "react-icons/fa6";
 import { MdDone } from "react-icons/md";
 import { Todo } from "../models";
+import { toast } from "react-toastify";
 
 type SingleTodoProps = {
   todo: Todo;
@@ -26,6 +27,17 @@ const SingleTodo = ({
     );
   };
 
+  const handleDelete = (id: number) => {
+    const confirm = window.confirm(
+      "Are you sure you want to delete this task?"
+    );
+    if (confirm) {
+      setTodos(todos.filter((t) => t.id !== id));
+      toast.error("Task Delete Successfully");
+    } else {
+      toast.warning("Task Not Deleted");
+    }
+  };
   const handleUpdate = (id: number, task: string) => {
     setTask(task);
     setUpdateId(id);
@@ -52,10 +64,7 @@ const SingleTodo = ({
       {/* <span className="icon" onClick={() => handleDone(todo.id)}>
         <MdDone />
       </span> */}
-      <span
-        className="icon"
-        onClick={() => setTodos(todos.filter((t) => t.id !== todo.id))}
-      >
+      <span className="icon" onClick={() => handleDelete(todo.id)}>
         <FaDeleteLeft />
       </span>
     </form>
