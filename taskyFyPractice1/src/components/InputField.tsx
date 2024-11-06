@@ -1,12 +1,20 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 interface Props {
   task: string;
   setTask: (task: string) => void;
   handleSubmit: (e: React.FormEvent) => void;
+  updateId?: number | null;
 }
-const InputField = ({ task, setTask, handleSubmit }: Props) => {
+const InputField = ({ task, setTask, handleSubmit, updateId }: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (updateId) {
+      inputRef.current?.focus();
+    } else {
+      inputRef.current?.blur();
+    }
+  }, [updateId, inputRef]);
   return (
     <form
       className="input"

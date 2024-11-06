@@ -32,7 +32,12 @@ const App = () => {
     <div>
       <div className="heading">taskyFy</div>
 
-      <InputField handleSubmit={handleSubmit} task={task} setTask={setTask} />
+      <InputField
+        updateId={updateId}
+        handleSubmit={handleSubmit}
+        task={task}
+        setTask={setTask}
+      />
 
       <TodoList
         setTask={setTask}
@@ -41,7 +46,7 @@ const App = () => {
         setTodos={setTodos}
       />
       <ToastContainer
-        position="top-right"
+        position="bottom-right"
         autoClose={1000}
         hideProgressBar={false}
         newestOnTop={true}
