@@ -17,10 +17,13 @@ const SingleTodo = ({ todo, todos, setTodos }: SingleTodoProps) => {
         <MdOutlineEdit />
       </span>
       <span className="icon">
-        <FaDeleteLeft />
-      </span>
-      <span className="icon">
         <MdDone />
+      </span>
+      <span
+        className="icon"
+        onClick={() => setTodos(todos.filter((t) => t.id !== todo.id))}
+      >
+        <FaDeleteLeft />
       </span>
     </form>
   );
