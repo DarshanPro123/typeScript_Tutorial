@@ -3,6 +3,7 @@ import InputField from "./components/InputField.js";
 import { Todo } from "./models.js";
 import TodoList from "./components/TodoList";
 import "react-toastify/dist/ReactToastify.css";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Bounce, toast, ToastContainer } from "react-toastify";
 
 const App = () => {
@@ -34,36 +35,39 @@ const App = () => {
     }
   };
   return (
-    <div>
-      <div className="heading">taskyFy</div>
+    <Router>
+      {" "}
+      <div>
+        <div className="heading">taskyFy</div>
 
-      <InputField
-        updateId={updateId}
-        handleSubmit={handleSubmit}
-        task={task}
-        setTask={setTask}
-      />
+        <InputField
+          updateId={updateId}
+          handleSubmit={handleSubmit}
+          task={task}
+          setTask={setTask}
+        />
 
-      <TodoList
-        setTask={setTask}
-        setUpdateId={setUpdateId}
-        todos={todos}
-        setTodos={setTodos}
-      />
-      <ToastContainer
-        position="bottom-right"
-        autoClose={1000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-        transition={Bounce}
-      />
-    </div>
+        <TodoList
+          setTask={setTask}
+          setUpdateId={setUpdateId}
+          todos={todos}
+          setTodos={setTodos}
+        />
+        <ToastContainer
+          position="bottom-right"
+          autoClose={1000}
+          hideProgressBar={false}
+          newestOnTop={true}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Bounce}
+        />
+      </div>
+    </Router>
   );
 };
 

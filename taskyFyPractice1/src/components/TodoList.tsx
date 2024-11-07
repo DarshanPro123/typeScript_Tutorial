@@ -1,5 +1,8 @@
 import { Todo } from "../models";
-import SingleTodo from "./SingleTodo";
+import ComplatedTodos from "./ComplatedTodos/ComplatedTodos";
+import ActiveTodos from "./ActiveTodos/ActiveTodos";
+import AllTodos from "./AllTodos/AllTodos";
+import { NavLink, Route, Routes } from "react-router-dom";
 
 interface TodoListProps {
   todos: Todo[];
@@ -19,38 +22,49 @@ const TodoList: React.FC<TodoListProps> = ({
   ).length;
   return (
     <div className="container">
-      <div className="todos">
-        <span className="todos__heading">Active Tasks</span>
-        {todos
-          .filter((todo) => !todo.isCompleted) // Show only active tasks
-          .map((todo) => (
-            <SingleTodo
-              setTask={setTask}
-              setUpdateId={setUpdateId}
-              key={todo.id}
-              todo={todo}
+      <nav className="nav">
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/active">Active</NavLink>
+        <NavLink to="/complated">Completed</NavLink>
+      </nav>
+      <div className="dark-line"></div>
+
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <AllTodos
               todos={todos}
               setTodos={setTodos}
-            />
-          ))}
-      </div>
-      <div className="todos remove">
-        <span className="todos__heading">
-          Completed Tasks {complatedLength}
-        </span>
-        {todos
-          .filter((todo) => todo.isCompleted) // Show only completed tasks
-          .map((todo) => (
-            <SingleTodo
-              setTask={setTask}
               setUpdateId={setUpdateId}
-              key={todo.id}
-              todo={todo}
+              setTask={setTask}
+            />
+          }
+        />
+        <Route
+          path="/active"
+          element={
+            <ActiveTodos
               todos={todos}
               setTodos={setTodos}
+              setUpdateId={setUpdateId}
+              setTask={setTask}
             />
-          ))}
-      </div>
+          }
+        />
+        <Route
+          path="/complated"
+          element={
+            <ComplatedTodos
+              todos={todos}
+              setTodos={setTodos}
+              setUpdateId={setUpdateId}
+              setTask={setTask}
+              complatedLength={complatedLength}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 };
