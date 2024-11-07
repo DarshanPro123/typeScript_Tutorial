@@ -15,7 +15,41 @@ const TodoList: React.FC<TodoListProps> = ({
   setTask,
 }) => {
   return (
-    <div className="todos">
+    <div className="container">
+      <div className="todos">
+        <span className="todos__heading">Active Tasks</span>
+        {todos.map((todo) => (
+          <SingleTodo
+            setTask={setTask}
+            setUpdateId={setUpdateId}
+            key={todo.id}
+            todo={todo}
+            todos={todos}
+            setTodos={setTodos}
+          />
+        ))}
+      </div>
+      <div className="todos remove">
+        <span className="todos__heading">Complated Tasks</span>
+        {todos.map((todo) => (
+          <SingleTodo
+            setTask={setTask}
+            setUpdateId={setUpdateId}
+            key={todo.id}
+            todo={todo}
+            todos={todos}
+            setTodos={setTodos}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default TodoList;
+
+{
+  /* <div className="todos">
       {todos.map((todo) => (
         <SingleTodo
           setTask={setTask}
@@ -26,8 +60,5 @@ const TodoList: React.FC<TodoListProps> = ({
           setTodos={setTodos}
         />
       ))}
-    </div>
-  );
-};
-
-export default TodoList;
+    </div> */
+}

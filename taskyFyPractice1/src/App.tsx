@@ -22,11 +22,16 @@ const App = () => {
       return;
     }
 
-    if (task)
+    if (task) {
       setTodos([...todos, { id: Date.now(), task, isCompleted: false }]);
-    toast.success("Task Added Successfully");
-    console.log(todos);
-    setTask("");
+      toast.success("Task Added Successfully");
+      setTask("");
+      return;
+    }
+
+    if (!task) {
+      toast.warning("Please enter a task");
+    }
   };
   return (
     <div>

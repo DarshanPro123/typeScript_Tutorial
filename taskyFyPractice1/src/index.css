@@ -16,7 +16,7 @@ body {
 
 .input {
   display: flex;
-  width: 90%;
+  width: 96%;
   margin: 10px auto;
   position: relative;
   align-items: center;
@@ -61,12 +61,34 @@ body {
   transform: scale(0.8);
   box-shadow: 0 0 6px #0000008b;
 }
+
+.container {
+  display: flex;
+  width: 96%;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 .todos {
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  width: 90%;
+  width: 47.5%;
   margin: auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #47f63a;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.todos__heading {
+  font-size: 2rem;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
+.remove {
+  background-color: rgb(235, 103, 80);
 }
 
 .todo_single {
@@ -75,8 +97,7 @@ body {
   justify-content: space-between;
   border-radius: 8px;
   width: 80%;
-  max-width: 500px;
-  padding: 15px 20px;
+  padding: 20px;
   margin: 15px 0;
   background-image: url("https://img.freepik.com/free-photo/white-paper-texture_1194-2301.jpg?t=st=1730868673~exp=1730872273~hmac=de130f58e9c42f026e9e9dac01c14ec496fd0f13976d592116ed6472401eb418&w=2000");
   background-size: cover;
@@ -120,4 +141,60 @@ body {
 
 .icon:hover {
   color: #000;
+}
+
+@media (max-width: 430px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .input {
+    width: 92%;
+    margin: 8px auto;
+  }
+
+  .input_box {
+    font-size: 20px;
+    padding: 15px 20px;
+  }
+
+  .submitBtn {
+    font-size: 1.2rem;
+    padding: 12px;
+    margin: 8px;
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .todos {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .todos__heading {
+    font-size: 1.5rem;
+    padding: 8px 15px;
+  }
+
+  .todo_single {
+    width: 90%;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .todo_single_text {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.2rem;
+    margin-left: 5px;
+  }
+
+  .done {
+    font-size: 1.2rem;
+  }
 }
