@@ -49,9 +49,13 @@ const SingleTodo = ({
       ) : (
         <span className="todo_single_text">{todo.task}</span>
       )}
-      <span className="icon" onClick={() => handleUpdate(todo.id, todo.task)}>
-        <MdOutlineEdit />
-      </span>
+      {!todo.isCompleted ? (
+        <span className="icon" onClick={() => handleUpdate(todo.id, todo.task)}>
+          <MdOutlineEdit />
+        </span>
+      ) : (
+        ""
+      )}
       {todo.isCompleted ? (
         <span className="icon done" onClick={() => handleDone(todo.id)}>
           <MdDone />
@@ -64,9 +68,13 @@ const SingleTodo = ({
       {/* <span className="icon" onClick={() => handleDone(todo.id)}>
         <MdDone />
       </span> */}
-      <span className="icon" onClick={() => handleDelete(todo.id)}>
-        <FaDeleteLeft />
-      </span>
+      {todo.isCompleted ? (
+        <span className="icon" onClick={() => handleDelete(todo.id)}>
+          <FaDeleteLeft />
+        </span>
+      ) : (
+        ""
+      )}
     </form>
   );
 };
