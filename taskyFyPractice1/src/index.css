@@ -2,8 +2,8 @@ body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #a5da20;
-  color: white;
+  background-color: #fff;
+  color: rgb(18, 18, 18);
   text-align: center;
 }
 
@@ -41,8 +41,8 @@ body {
 .submitBtn {
   position: absolute;
   right: 0;
-  background-color: #5c7d06;
-  color: white;
+  background-color: #fff;
+  color: rgb(16, 15, 15);
   border: none;
   padding: 16px;
   font-size: 1.4rem;
@@ -53,7 +53,7 @@ body {
 }
 
 .submitBtn:hover {
-  background-color: #1a4f06;
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -81,14 +81,6 @@ body {
   margin: 0px auto;
 }
 
-/* .dark-line {
-  background-color: #484747;
-  height: 1.3px;
-  width: 50%;
-  margin: 0px auto;
-  box-shadow: 0px 14px 10px rgba(0, 0, 0, 0.36);
-} */
-
 .nav a {
   color: #0b0e29;
   font-size: 1.5rem;
@@ -97,8 +89,9 @@ body {
 }
 
 .active {
-  border-bottom: 2px solid #030303;
+  border-bottom: 2px solid #04051e;
   color: #0cdbea;
+  transition: all 0.5s;
 }
 
 .counter {
@@ -118,10 +111,11 @@ body {
   display: flex;
   width: 47.5%;
   margin: auto;
+  transition: all 0.5s;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #f6853a;
+  background-color: #615f5d;
   padding: 10px;
   border-radius: 6px;
 }
@@ -130,14 +124,17 @@ body {
   font-size: 2rem;
   padding: 10px 20px;
   margin-bottom: 10px;
+  color: rgb(170, 166, 166);
 }
 
 .activeTask {
-  background-color: #1da3c8;
+  background-color: #9ae9fe;
+  transition: all 0.5s;
 }
 
 .remove {
-  background-color: rgb(235, 103, 80);
+  background-color: rgb(245, 179, 168);
+  transition: all 0.5s;
 }
 
 .todo_single {
@@ -198,7 +195,7 @@ body {
   }
 
   .input {
-    width: 92%;
+    width: 98%;
     margin: 8px auto;
   }
 
@@ -232,6 +229,10 @@ body {
     width: 90%;
     padding: 15px;
     margin: 10px 0;
+  }
+  .nav {
+    width: 100%;
+    padding: 0 10px;
   }
 
   .todo_single_text {
