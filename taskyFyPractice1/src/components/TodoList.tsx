@@ -25,8 +25,12 @@ const TodoList: React.FC<TodoListProps> = ({
       <nav className="nav">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/active">Active</NavLink>
-        <NavLink to="/complated">Completed</NavLink>
+        <div className="counter">
+          <NavLink to="/complated">Completed</NavLink>
+          <span>{complatedLength}</span>
+        </div>
       </nav>
+
       <div className="dark-line"></div>
 
       <Routes>
