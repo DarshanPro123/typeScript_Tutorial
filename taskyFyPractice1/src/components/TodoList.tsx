@@ -27,7 +27,7 @@ const TodoList: React.FC<TodoListProps> = ({
         <NavLink to="/active">Active</NavLink>
         <div className="counter">
           <NavLink to="/complated">Completed</NavLink>
-          <span>{complatedLength}</span>
+          {complatedLength > 0 && <span>{complatedLength}</span>}
         </div>
       </nav>
 

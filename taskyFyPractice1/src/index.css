@@ -105,6 +105,7 @@ body {
   top: -4px;
   padding: 1px 6px;
   border-radius: 60%;
+  color: white;
   background-color: #ea0c0c;
   transition: 0.5s;
 }
