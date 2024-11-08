@@ -38,7 +38,9 @@ const App = () => {
     <Router>
       {" "}
       <div>
-        <div className="heading">taskyFy</div>
+        <div className="heading">
+          tasky<span>fy</span>
+        </div>
 
         <InputField
           updateId={updateId}
